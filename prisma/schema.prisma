@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -11,10 +11,16 @@ generator client {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-
-  email    String @unique
-  password String
-
-  name String
+  id            Int       @id @default(autoincrement())
+  username      String?   @unique
+  email         String    @unique
+  password      String
+  avatar        String?
+  gender        String?
+  country_code  String?
+  currency_code String?
+  mm_address    String?
+  rn_address    String?
+  created_at    DateTime  @default(now())
+  updated_at    DateTime?
 }

@@ -19,7 +19,16 @@ export class UserService {
 
     return {
       ...createdUser,
+      username: undefined,
       password: undefined,
+      avatar: undefined,
+      gender: undefined,
+      country_code: undefined,
+      currency_code: undefined,
+      mm_address: undefined,
+      rn_address: undefined,
+      created_at: undefined,
+      updated_at: undefined,
     };
   }
 
